@@ -105,9 +105,16 @@ td input[type='checkbox'] {
 
 #submit {
     font-size: 30px;
-    width: 100px;
+    width: 200px;
     height: 50px;
+    box-shadow: 5px 5px 2px black;
 }
+
+#submit:hover {
+    scale: 1.1;
+}
+
+
 
 #todo {
     width: 400px;

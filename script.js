@@ -248,3 +248,39 @@ randomimage[4] = "Img/長澤まさみ.jpg";
 let n = Math.floor(Math.random() * randomimage.length);
 console.log(n);
 document.getElementById('random-image').style.background = 'url("' + randomimage[n] + '")  center 250px /contain no-repeat';
+
+window.addEventListener('DOMContentLoaded', function () {
+
+    const btn_p = document.getElementById("submit");
+    const vide = document.querySelector("#haruna");
+
+    btn_p.addEventListener("click", e => {
+        vide.play();
+    });
+
+});
+
+window.addEventListener('DOMContentLoaded', function () {
+
+    const btn_p = document.getElementById("todo");
+    const vide = document.querySelector("#aisatu");
+
+    btn_p.addEventListener("click", e => {
+        vide.play();
+    });
+
+});
+
+
+
+// window.addEventListener('DOMContentLoaded', function () {
+
+//     const btn_p = document.getElementById("todo");
+//     const vide = document.querySelector("#aisatu");
+
+//     btn_p.addEventListener("click", e => {
+//         vide.play();
+//     });
+
+// });
+
