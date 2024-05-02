@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>myMemoPad初級</title>
+  <link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body>
+  <header>
+    <h1>MemoPad初級編</h1>
+  </header>
+
+  <main>
+    <textarea id="text_area"></textarea>
+    <ul>
+      <li id="save">Save</li>
+      <li id="clear">Clear</li>
+    </ul>
+  </main>
+
+  <footer>
+    <small>G's</small>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+
+    // 保存の処理
+    $("#save").on("click", function () {
+      const text = $("#text_area").val();
+      localStorage.setItem("memo", text);
+    });
+    // 削除の処理
+    $("#clear").on("click", function () {
+      localStorage.removeItem("memo");
+      $("#text_area").val("");
+
+    });
+
+    // 保存されているデータを表示する処理
+    if (localStorage.getItem("memo")) {
+      const text = localStorage.getItem("memo");
+      $("#text_area").val(text);
+
+    }
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>myMemoPad中級</title>
+  <link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body>
+  <header>
+    <h1>MemoPad中級編</h1>
+  </header>
+
+  <main>
+    <input type="text" id="input">
+    <textarea id="text_area"></textarea>
+    <ul>
+      <li id="save">Save</li>
+      <li id="save">load</li>
+      <li id="clear">Clear</li>
+    </ul>
+
+    <p id="kensaku"></p>
+  </main>
+
+  <footer>
+    <small>G's</small>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+    // 保存の処理
+    $("#save").on("click", function () {
+
+      const memo = {
+        title: $("#input").val(),
+        text: $("#text_area").val(),
+      };
+      console.log(memo);
+
+      const json = JSON.stringify(memo);
+      console.log(json);
+      localStorage.setItem("memo2", json);
+    });
+
+    // 削除の処理
+    $("#clear").on("click", function () {
+      localStorage.removeItem("memo2");
+      $("#text_area").val("");
+      $("#input").val("");
+
+    });
+
+    // 保存されているデータを表示する処理
+    if (localStorage.getItem("memo2")) {
+      const json = localStorage.getItem("memo2");
+      const memo = JSON.parse(json);
+      $("#text_area").val(memo.text);
+      $("#input").val(memo.title);
+    }
+
+  </script>
+
+</body>
+
+</html>

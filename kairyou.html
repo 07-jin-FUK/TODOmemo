@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Why me</title>
+    <link rel="stylesheet" href="rensou.css">
+</head>
+
+<body>
+
+    <p>Why me に向けて</p>
+
+    <p>
+        <label>まず何をしたいのか。<input type="text" id="nameText"></label>
+        <input type="button" value="Check" id="checkButton">
+    </p>
+
+    <p id="msg"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function butotnClick() {
+            msg.innerText = 'なぜ' + nameText.value + 'したいのでしょうか？？';
+        }
+
+        let nameText = document.getElementById('nameText');
+        nameText.value = '内容';
+        let msg = document.getElementById('msg');
+
+        let checkButton = document.getElementById('checkButton');
+        checkButton.addEventListener('click', butotnClick);
+
+        // テキストエリアに入れたものをタグに入れる
+        const history = [];
+        $('#checkButton').on('click', function () {
+
+            history.unshift(nameText);
+            console.log(history);
+
+        });
+
+
+        // // 履歴をタグに入れたものを入れる
+        // const historyHtml = [];
+
+        // // 順番ごとに配列に追加
+        // for (let i = 0; i < history.length; i++) {
+        //     historyHtml.push('<p>' + history[i] + '</p>')
+        // }
+        // console.log(historyHtml);
+        // $('#history').html(historyHtml);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

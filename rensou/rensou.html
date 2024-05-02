@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myMemoPad中級</title>
+    <link rel="stylesheet" href="rensou.css">
+</head>
+
+<body>
+    <header>
+        <h1>Why meに向けて！</h1>
+    </header>
+
+    <main>
+        <!-- <input type="text" id="input"> -->
+        <input type="text" id="text_area" value="">
+        <ul>
+            <li onclick="naiyou()" id="save">Save</li>
+            <p id="enter">入力文字</p>
+            <li id="clear">Clear</li>
+        </ul>
+
+        <div id="history">
+            <p>あなたの本質は？
+            </p>
+        </div>
+
+        <p id="kensaku"></p>
+    </main>
+
+    <footer>
+        <small>G's</small>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        // // 保存の処理
+        // $("#save").on("click", function () {
+
+        //     const memo = {
+        //         title: $("#input").val(),
+        //         text: $("#text_area").val(),
+        //     };
+        //     console.log(memo);
+
+        //     const json = JSON.stringify(memo);
+        //     console.log(json);
+        //     localStorage.setItem("memo2", json);
+        // });
+
+        // // 削除の処理
+        // $("#clear").on("click", function () {
+        //     localStorage.removeItem("memo2");
+        //     $("#text_area").val("");
+        //     $("#input").val("");
+
+        // });
+
+        // // 保存されているデータを表示する処理
+        // if (localStorage.getItem("memo2")) {
+        //     const json = localStorage.getItem("memo2");
+        //     const memo = JSON.parse(json);
+        //     $("#text_area").val(memo.text);
+        //     $("#input").val(memo.title);
+        // }
+
+        // テキストエリアに入れたものをタグに入れる
+        // const history = [];
+        // $('#save').on('click', function () {
+
+        //     let result = document.getElementById("text_area");
+        //     $('#enter').text("text_area");
+        //     history.unshift(result);
+        //     console.log(history);
+
+        //     // 履歴をタグに入れたものを入れる
+        //     const historyHtml = [];
+
+        //     // 順番ごとに配列に追加
+        //     for (let i = 0; i < history.length; i++) {
+        //         historyHtml.push('<p>' + history[i] + '</p>')
+        //     }
+        //     console.log(historyHtml);
+        //     $('#history').html(historyHtml);
+
+        const kaitamono = () => {
+            const naiyou = document.getElementById("text_area").value;
+            console.log(naiyou)
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

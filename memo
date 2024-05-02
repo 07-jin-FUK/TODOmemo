@@ -1,0 +1,49 @@
+ドット記法
+.（ドット）を使ってプロパティにアクセスする記法です。
+
+onst obj = {};
+obj.name = 'taka'; // objのプロパティをセット
+obj.hello = function(){
+    console.log(`Hello,${this.name}`);
+}
+
+console.log(obj.name); // taka
+obj.hello(); // Hello,taka
+
+
+ブラケット記法
+[ ]（ブラケット）を使ってプロパティにアクセスする方法です。
+const obj = {};
+obj['name'] = 'taka'; // objのプロパティをセット
+obj['hello'] = function(){
+    console.log(`Hello,${this.name}`);
+}
+
+console.log(obj['name']); // taka
+obj['hello'](); // Hello,taka
+
+メソッドも[ ]の後に()を付けて実行できます。
+
+ブラケット記法は、プロパティ名に変数を与えることができます。ドット記法ではできません。
+ブラケット記法はループなど動的にプロパティ名を変更したい場合に便利です。
+
+例えば、配列にキーを格納して、オブジェクトの中身を取得した時など。
+
+
+const key = ['html','css','javascript'];
+const obj = {
+    html:'骨組み',
+    css:'装飾',
+    javascript:'動作'
+}
+
+key.forEach(function(key){
+    let result = key + 'は、Webページの' + obj[key] + 'を作ります。'
+    console.log(result);
+});
+
+
+「prop()」はHTML要素に付与されている「id・class・name」…などの属性や、
+「checked・selected」…などのプロパティを取得できます。
+特によく使われるのが、フォームをjQueryで操作する時に必須となる
+「checked」などのプロパティを扱うケースです。
